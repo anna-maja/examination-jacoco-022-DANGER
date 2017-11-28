@@ -1,7 +1,7 @@
 package se.nackademin.examination.examination_jacoco;
 
 import java.util.ArrayList;
-
+ 
 public class DataAnalysis {
 	
 	

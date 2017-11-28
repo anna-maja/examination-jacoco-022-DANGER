@@ -2,13 +2,14 @@ package se.nackademin.examination.examination_jacoco;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+ 
 public class Game {
 
 	private ResultFromInputs resultFromInputs = new ResultFromInputs();
 	
 	
 	public void run(ArrayList<String> values){
+		
 		DataAnalysis dataAnalysis = new DataAnalysis();
 		getGenderFromInputValues(values);
 		getAgeFromInputValues(values);		
@@ -19,9 +20,11 @@ public class Game {
 	
 	
 	public ArrayList<String> collectInputData(){
+		
 		ArrayList<String> resultArray = new ArrayList<String>();
 		Scanner scanner = new Scanner(System.in);
 		String inputValue = "";
+		
 		System.out.println("Enter the name of the Game (String):");
 		inputValue = scanner.nextLine();
 		resultArray.add(inputValue);
