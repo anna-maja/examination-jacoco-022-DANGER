@@ -1,4 +1,4 @@
-
+package se.nackademin.examination.examination_jacoco;
 import java.util.ArrayList;
 
 
@@ -9,7 +9,7 @@ public class Main {
 		 * All code hidden to make sure I can test only class methods without disturbance from Main.
 		 *
 		 *
-		 * package se.nackademin.examination.examination_jacoco;
+		 * 
 		 
 
 		Game game = new Game();

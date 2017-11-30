@@ -30,9 +30,9 @@ public class ResultsFromInputsTest {
 
 		ResultFromInputs resultsFromInputs = new ResultFromInputs();
 
-		resultsFromInputs.setResultForGender('f');
-		assertEquals(resultsFromInputs.getResultForGender(), 'f');
-		LOG.info("Testing set- and getResultForGender with local f and " + resultsFromInputs.getResultForGender());
+		resultsFromInputs.setResultForGender(1);
+		assertEquals(resultsFromInputs.getResultForGender(), 1);
+		LOG.info("Testing set- and getResultForGender with local 1 and " + resultsFromInputs.getResultForGender());
 	}
 
 	/**
@@ -48,4 +48,16 @@ public class ResultsFromInputsTest {
 		LOG.info("Testing set- and getResultForAge with local 40 and " + resultFromInputs.getResultForAge());
 	}
 
+	/**
+	 * Testmethod for get- and set- ResultForHomeCity
+	 */
+	@Test
+	public void testHomecitySetAndGet() {
+
+		ResultFromInputs resultFromInputs = new ResultFromInputs();
+
+		resultFromInputs.setResultForHomeCity(4);
+		assertEquals(resultFromInputs.getResultForHomeCity(), 4);
+		LOG.info("Testing set- and getResultForHomeCity with local 4 and " + resultFromInputs.getResultForAge());
+	}
 }
