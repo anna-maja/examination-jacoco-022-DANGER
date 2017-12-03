@@ -13,7 +13,8 @@ public class Conversor {
 
 	}
  
-	
+	// testa set- and get för alla metoder
+	// 4 metoder med ett antal testfall per metod...
 	public void setGenderConverterArrayValues(){
 		this.genderConverterArray.add("man!");
 		this.genderConverterArray.add("woman!");
