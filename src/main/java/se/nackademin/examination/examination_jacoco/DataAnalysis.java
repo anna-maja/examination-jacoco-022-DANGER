@@ -4,7 +4,9 @@ import java.util.ArrayList;
  
 public class DataAnalysis {
 	
-	
+	/*
+	 * Testa result<String med lokala och metodvärden.
+	 */
 	public String buildFinalString(ArrayList<String> values){
 		String	resultString = "#####################-- ANALYSIS OF THE INPUT DATA --#####################\n";	
 		resultString += getResultStringNamesAndAge(values);
@@ -14,7 +16,11 @@ public class DataAnalysis {
 		return resultString;
 	}	
 	
-	
+	/* skapa lokala värden och metodvärden. Jämför String-return med contains.
+	 testa fN <= lN, 
+	 fN > lN, 
+	 fN = lN.
+	 */
 	public String getResultStringNamesAndAge(ArrayList<String> values){
 		Game game = new Game();
 		if (values.get(1).length()<=values.get(2).length() && game.getAgeFromInputValues(values)<=30){
@@ -26,6 +32,12 @@ public class DataAnalysis {
 		return "No analysis was performed";
 	}
 	
+	/* skapa lokala värden och metodvärden. Jämför String-return med contains.
+	// (homeCity.length <5 && getAge >= 30)
+	 * homeCity.length <5 && getAge <30
+	 * homeCity.length >= 5 &&  getAge >= 30)
+	 * homeCity.length >= 5 && getAge <30
+	*/
 	public String getResulStringHomecityAndAge(ArrayList<String> values){
 		Game game = new Game();
 		if (values.get(5).length()<5){
