@@ -51,7 +51,7 @@ public class Game {
 		return resultArray;
 	} 
 	
-	// getGender... etc kan testas. Lokal variabel jämförs med metodens return-värde.
+	// full test coverage
 	public char getGenderFromInputValues(ArrayList<String> arrayOfInputs){
 		char genderCharacter = arrayOfInputs.get(3).charAt(0);	
 		return genderCharacter;		

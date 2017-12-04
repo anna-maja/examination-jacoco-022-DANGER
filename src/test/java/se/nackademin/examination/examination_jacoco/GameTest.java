@@ -47,14 +47,6 @@ public class GameTest {
 
 	}
 
-	/*
-	 * testa med alla tre villkor: fN < lN, fN > lN, fN = lN
-	 * 
-	 * public int calculateOutPutBasedOnNames(String firstName, String lastName) {
-	 * if (firstName.length() < lastName.length()) { return 0; } if
-	 * (firstName.length() > lastName.length()) { return 1; } else { return 2; } }
-	 */
-
 	@Test
 	public void testCollectInputData() {
 
@@ -81,31 +73,26 @@ public class GameTest {
 			System.out.println("Something fishy.");
 		}
 	}
-	/*
-	 * @Test public void testSetGetGenderFromInputValues() {
-	 * 
-	 * //Game g = new Game(); //ResultFromInputs r = new ResultFromInputs(); char
-	 * localGenderChar = 'X'; ArrayList<String> localArray = new
-	 * ArrayList<String>(); //ArrayList<String> resultArray = new
-	 * ArrayList<String>(); //{"0. OTHELLO", "1. STINA", "2. HUSSEIN", "3. F",
-	 * "4. 30", "5. STOCKHOLM"}
-	 * 
-	 * localArray.add("0. OTHELLO"); localArray.add("1. STINA");
-	 * localArray.add("2. HUSSEIN"); localArray.add("X"); localArray.add("4. 30");
-	 * localArray.add("5. STOCKHOLM");
-	 * 
-	 * ArrayList<String> methodValues = g.collectInputData(); //localGenderChar ==
-	 * genderCharacter char methodGender =
-	 * g.getGenderFromInputValues(arrayOfInputs)get(3)); /* g;
-	 * studentList2.add(se2);
-	 * 
-	 * 
-	 * 
-	 * //arrayListVarannatTal.add(arrayList1.get(i));
-	 * 
-	 * 
-	 * }
-	 */
+
+	// full coverage
+	@Test
+	public void testSetGetGenderFromInputValues() {
+
+		Game g = new Game();
+		ResultFromInputs r = new ResultFromInputs();
+		char localGenderChar = 'X';
+		ArrayList<String> localArray = new ArrayList<String>();
+		
+		localArray.add(0, "A");
+		localArray.add(1, "B");
+		localArray.add(2, "C");
+		localArray.add(3, "X");
+
+		ArrayList<String> methodValues = g.collectInputData();
+		char methodGender = g.getGenderFromInputValues(methodValues);
+		assertEquals(methodGender == 'X', true);
+		LOG.info("Testing to get gender X" + methodGender);
+	}
 
 	// testa att bygga en finalString med lokala värden och alla metoder.
 	// testa println med förväntade värden och anropade värden
