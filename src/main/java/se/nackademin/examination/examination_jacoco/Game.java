@@ -57,7 +57,7 @@ public class Game {
 		return genderCharacter;		
 	}	
 
-	// getAge etc kan testas. Lokal variabel jämförs med metodens return-värde.
+	// full test coverage
 	public int getAgeFromInputValues(ArrayList<String> arrayOfInputs){
 		int ageValue = Integer.parseInt(arrayOfInputs.get(4));	
 		return ageValue;

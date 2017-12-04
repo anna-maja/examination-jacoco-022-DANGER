@@ -93,6 +93,27 @@ public class GameTest {
 		assertEquals(methodGender == 'X', true);
 		LOG.info("Testing to get gender X" + methodGender);
 	}
+	
+	// 100% test coverage
+	@Test
+	public void testSetGetAgeFromInputValues() {
+
+		Game g = new Game();
+		ResultFromInputs r = new ResultFromInputs();
+		int localAge = 0;
+		ArrayList<String> localArray = new ArrayList<String>();
+		
+		localArray.add(0, "A");
+		localArray.add(1, "B");
+		localArray.add(2, "C");
+		localArray.add(3, "X");
+		localArray.add(4, "40");
+
+		ArrayList<String> methodValues = g.collectInputData();
+		int methodAge = g.getAgeFromInputValues(methodValues);
+		assertEquals(methodAge == 40, true);
+		LOG.info("Testing to get age 40: " + methodAge);
+	}
 
 	// testa att bygga en finalString med lokala värden och alla metoder.
 	// testa println med förväntade värden och anropade värden
