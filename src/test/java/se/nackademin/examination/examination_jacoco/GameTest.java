@@ -47,6 +47,100 @@ public class GameTest {
 
 	}
 
+	/*
+	 * * testa med tre villkor: M, F, X. Lokalt return-värde ska stämma med metodens.
+	 
+	public int calculateOutPutBasedOnGender(char gender) {
+		if (gender == 'M') {
+			return 0;
+		}
+		if (gender == 'F') {
+			return 1;
+		}
+		return 2;
+	}*/
+	
+	@Test
+	
+	public void testCalculateOutputBasedOnGender () {
+		char male = 'M';
+		int m = 0; 
+		char female = 'F';
+		int f = 1; 
+		char other = 'O';
+		int o = 2; 
+		
+		assertEquals(g.calculateOutPutBasedOnGender(male) == m, true);
+		LOG.info("Testing calculateOutPutBasedOnGender with M " + male + ": " +m);
+		assertEquals(g.calculateOutPutBasedOnGender(female) == f, true);
+		LOG.info("Testing calculateOutPutBasedOnGender with F  " + female + ": " +f);
+		assertEquals(g.calculateOutPutBasedOnGender(other) == o, true);
+		LOG.info("Testing calculateOutPutBasedOnGender with O " + other + ": " + o);
+
+	}
+	/*
+	 * testa med två villkor för age: <=25 >25. Lokalt return-värde ska stämma med
+	 * metodens.
+	 
+	public int calculateOutPutBasedOnAge(int age) {
+		if (age <= 25) {
+			return 0;
+		} else {
+			return 1;
+		}
+	}
+	 */
+	@Test
+	public void testCalculateOutputBasedOnAge() {
+		
+		assertEquals(g.calculateOutPutBasedOnAge(24) == 0, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with 24 ");
+		assertEquals(g.calculateOutPutBasedOnAge(25) == 0, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with 25 ");
+		assertEquals(g.calculateOutPutBasedOnAge(30) == 1, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with 30 ");
+	}
+	
+	@Test
+	// testa alla inputs och alla returvärden
+	public void testCalculateOutputBasedOnHomeCity() {
+
+		assertEquals(g.calculateOutPutBasedOnHomeCity("a") == 0, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("A") == 0, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with a and A ");
+		assertEquals(g.calculateOutPutBasedOnHomeCity("b") == 1, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("B") == 1, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with b and B ");
+		assertEquals(g.calculateOutPutBasedOnHomeCity("c") == 2, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("C") == 2, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with c and C");	
+		assertEquals(g.calculateOutPutBasedOnHomeCity("d") == 3, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("D") == 3, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with d and D");
+		assertEquals(g.calculateOutPutBasedOnHomeCity("e") == 4, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("E") == 4, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with e and E");
+		assertEquals(g.calculateOutPutBasedOnHomeCity("f") == 5, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("F") == 5, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with f and F");   
+		assertEquals(g.calculateOutPutBasedOnHomeCity("g") == 6, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("G") == 6, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with g and G");
+		assertEquals(g.calculateOutPutBasedOnHomeCity("h") == 7, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("H") == 7, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with h and H");
+		assertEquals(g.calculateOutPutBasedOnHomeCity("i") == 8, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("I") == 8, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with i and I"); 
+		assertEquals(g.calculateOutPutBasedOnHomeCity("j") == 9, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("J") == 9, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with j and J");
+		assertEquals(g.calculateOutPutBasedOnHomeCity("x") == 10, true);
+		assertEquals(g.calculateOutPutBasedOnHomeCity("X") == 10, true);
+		LOG.info("Testing calculateOutPutBasedOnAge with x and X");
+		
+	}
+
 	@Test
 	public void testCollectInputData() {
 
@@ -93,7 +187,7 @@ public class GameTest {
 		assertEquals(methodGender == 'X', true);
 		LOG.info("Testing to get gender X" + methodGender);
 	}
-	
+	 
 	// 100% test coverage
 	@Test
 	public void testSetGetAgeFromInputValues() {
@@ -114,6 +208,31 @@ public class GameTest {
 		assertEquals(methodAge == 40, true);
 		LOG.info("Testing to get age 40: " + methodAge);
 	}
+	/*
+	 * @Test public void testSetGetGenderFromInputValues() {
+	 * 
+	 * //Game g = new Game(); //ResultFromInputs r = new ResultFromInputs(); char
+	 * localGenderChar = 'X'; ArrayList<String> localArray = new
+	 * ArrayList<String>(); //ArrayList<String> resultArray = new
+	 * ArrayList<String>(); //{"0. OTHELLO", "1. STINA", "2. HUSSEIN", "3. F",
+	 * "4. 30", "5. STOCKHOLM"}
+	 * 
+	 * localArray.add("0. OTHELLO"); localArray.add("1. STINA");
+	 * localArray.add("2. HUSSEIN"); localArray.add("X"); localArray.add("4. 30");
+	 * localArray.add("5. STOCKHOLM");
+	 * 
+	 * ArrayList<String> methodValues = g.collectInputData(); //localGenderChar ==
+	 * genderCharacter char methodGender =
+	 * g.getGenderFromInputValues(arrayOfInputs)get(3)); /* g;
+	 * studentList2.add(se2);
+	 * 
+	 * 
+	 * 
+	 * //arrayListVarannatTal.add(arrayList1.get(i));
+	 * 
+	 * 
+	 * }
+	 */
 
 	// testa att bygga en finalString med lokala värden och alla metoder.
 	// testa println med förväntade värden och anropade värden
