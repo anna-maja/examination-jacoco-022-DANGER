@@ -46,19 +46,6 @@ public class GameTest {
 		assertEquals(g.calculateOutPutBasedOnNames(firstName, lastName) == 2, true);
 
 	}
-
-	/*
-	 * * testa med tre villkor: M, F, X. Lokalt return-värde ska stämma med metodens.
-	 
-	public int calculateOutPutBasedOnGender(char gender) {
-		if (gender == 'M') {
-			return 0;
-		}
-		if (gender == 'F') {
-			return 1;
-		}
-		return 2;
-	}*/
 	
 	@Test
 	
@@ -78,18 +65,7 @@ public class GameTest {
 		LOG.info("Testing calculateOutPutBasedOnGender with O " + other + ": " + o);
 
 	}
-	/*
-	 * testa med två villkor för age: <=25 >25. Lokalt return-värde ska stämma med
-	 * metodens.
-	 
-	public int calculateOutPutBasedOnAge(int age) {
-		if (age <= 25) {
-			return 0;
-		} else {
-			return 1;
-		}
-	}
-	 */
+
 	@Test
 	public void testCalculateOutputBasedOnAge() {
 		
@@ -102,7 +78,6 @@ public class GameTest {
 	}
 	
 	@Test
-	// testa alla inputs och alla returvärden
 	public void testCalculateOutputBasedOnHomeCity() {
 
 		assertEquals(g.calculateOutPutBasedOnHomeCity("a") == 0, true);
@@ -208,32 +183,7 @@ public class GameTest {
 		assertEquals(methodAge == 40, true);
 		LOG.info("Testing to get age 40: " + methodAge);
 	}
-	/*
-	 * @Test public void testSetGetGenderFromInputValues() {
-	 * 
-	 * //Game g = new Game(); //ResultFromInputs r = new ResultFromInputs(); char
-	 * localGenderChar = 'X'; ArrayList<String> localArray = new
-	 * ArrayList<String>(); //ArrayList<String> resultArray = new
-	 * ArrayList<String>(); //{"0. OTHELLO", "1. STINA", "2. HUSSEIN", "3. F",
-	 * "4. 30", "5. STOCKHOLM"}
-	 * 
-	 * localArray.add("0. OTHELLO"); localArray.add("1. STINA");
-	 * localArray.add("2. HUSSEIN"); localArray.add("X"); localArray.add("4. 30");
-	 * localArray.add("5. STOCKHOLM");
-	 * 
-	 * ArrayList<String> methodValues = g.collectInputData(); //localGenderChar ==
-	 * genderCharacter char methodGender =
-	 * g.getGenderFromInputValues(arrayOfInputs)get(3)); /* g;
-	 * studentList2.add(se2);
-	 * 
-	 * 
-	 * 
-	 * //arrayListVarannatTal.add(arrayList1.get(i));
-	 * 
-	 * 
-	 * }
-	 */
-
+		
 	// testa att bygga en finalString med lokala värden och alla metoder.
 	// testa println med förväntade värden och anropade värden
 	// jämför println contains med lokalt värde.

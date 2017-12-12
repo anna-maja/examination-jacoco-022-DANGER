@@ -1,4 +1,4 @@
-package se.nackademin.examination.examination_jacoco;
+/*package se.nackademin.examination.examination_jacoco;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -32,3 +32,4 @@ public class IdeasForTests {
 		assertEquals(Arrays.asList("Customer3"), ideas.myArray(get(3))))
 	}
 }
+*/
