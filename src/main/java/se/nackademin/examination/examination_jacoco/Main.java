@@ -8,9 +8,9 @@ public class Main {
 		 *
 		 * All code hidden to make sure I can test only class methods without disturbance from Main.
 		 *
-		 *
-		 
-		 
+		 */
+		new GUI022Danger();
+			/* 
 
 		Game game = new Game();
 		ArrayList<String> values = new ArrayList<String>();					
