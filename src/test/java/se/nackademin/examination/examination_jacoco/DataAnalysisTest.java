@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-public class DataAnalysisTest {
+public class DataAnalysisTest { // 100% coverage of all class DataAnalysis :-)
 
 	@Test
 	public void testBuildFinalString() {

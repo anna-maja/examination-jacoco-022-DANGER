@@ -1,7 +1,7 @@
 package se.nackademin.examination.examination_jacoco;
 
 import java.util.ArrayList;
-
+ 
 public class Conversor {
 	
 	private ArrayList<String> nameConverterArray = new ArrayList<String>();
@@ -14,7 +14,7 @@ public class Conversor {
 	}
  
 	// testa set- and get för alla metoder
-	// 4 metoder med ett antal testfall per metod...
+	// 4 metoder med ett antal testfall per metod... // 100% coverage
 	public void setGenderConverterArrayValues(){
 		this.genderConverterArray.add("man!");
 		this.genderConverterArray.add("woman!");
@@ -26,7 +26,7 @@ public class Conversor {
 		this.ageConverterArray.add("You are experienced and talented! Things will come your way soon enough!");		
 	}	
 	
-	public void setNameConverterArrayValues(){
+	public void setNameConverterArrayValues(){ 
 		this.nameConverterArray.add("Your first name is smaller than your last name");		
 		this.nameConverterArray.add("Your last name is smaller than your first name");
 		this.nameConverterArray.add("The lengths of your first name is your last name are the same");
