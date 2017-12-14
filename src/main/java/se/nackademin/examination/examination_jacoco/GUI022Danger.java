@@ -163,7 +163,7 @@ public class GUI022Danger {
 
 			public void actionPerformed(ActionEvent e) {
 				
-				lblFinalStringOutput.setText();
+				lblFinalStringOutput.setText("Här vill jag att texten från buildFinalString skall visas");//g.buildFinalString(firstName, lastName, resultFromInputs, conversor););
 			}
 		});
 	}
