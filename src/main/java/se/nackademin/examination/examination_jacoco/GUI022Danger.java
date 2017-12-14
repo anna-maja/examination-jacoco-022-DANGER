@@ -9,35 +9,39 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.Color;
 
 public class GUI022Danger {
-	
+
 	private Game g = new Game();
 
 	private JFrame frame = new JFrame();;
-	
+
 	private JLabel lblGame = new JLabel("Enter the name of the Game (String) and ENTER:");
 	private JLabel lblFirstName = new JLabel("Enter your first name (String) and ENTER:");
 	private JLabel lblLastName = new JLabel("Enter your last name(String) and ENTER:");
 	private JLabel lblGender = new JLabel("Enter your gender - m, f or o (char) and ENTER:");
 	private JLabel lblAge = new JLabel("Enter your age (int) and ENTER:");
 	private JLabel lblHomeTown = new JLabel("Enter your hometown (String) and ENTER:");
-	
+
 	private JTextField tfGame = new JTextField();
 	private JTextField tfFirstName = new JTextField();;
 	private JTextField tfLastName = new JTextField();
 	private JTextField tfAge = new JTextField();
 	private JTextField tfGender = new JTextField();
 	private JTextField tfHomeTown = new JTextField();
-	
+
 	private JButton btnKlar = new JButton("KLAR");
 	private JLabel lblFinalStringOutput = new JLabel("");
-	
+
+	private JButton btnResetFields = new JButton("GÖR IGEN");
+	private JButton btnAvsluta = new JButton("AVSLUTA");
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
+
 		frame.setBounds(100, 100, 675, 512);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -63,13 +67,16 @@ public class GUI022Danger {
 		tfHomeTown.setColumns(10);
 		tfHomeTown.setBounds(360, 248, 216, 24);
 
-		lblFinalStringOutput.setBounds(22, 280, 500, 150);
-
+		lblFinalStringOutput.setBounds(22, 297, 482, 133);
+		btnKlar.setBackground(Color.GREEN);
 		btnKlar.setBounds(219, 281, 117, 25);
+		btnAvsluta.setBackground(Color.RED);
+		btnAvsluta.setBounds(505, 323, 117, 25);
+		btnResetFields.setBackground(Color.CYAN);
+		btnResetFields.setBounds(505, 284, 117, 25);
+
 	}
 
-
-	
 	/**
 	 * Adds all the components.
 	 */
@@ -82,7 +89,7 @@ public class GUI022Danger {
 		frame.getContentPane().add(lblGender);
 		frame.getContentPane().add(lblAge);
 		frame.getContentPane().add(lblHomeTown);
-		
+
 		frame.getContentPane().add(tfGame);
 		frame.getContentPane().add(tfFirstName);
 		frame.getContentPane().add(tfLastName);
@@ -93,81 +100,120 @@ public class GUI022Danger {
 		frame.getContentPane().add(btnKlar);
 		frame.getContentPane().add(lblFinalStringOutput);
 
+		frame.getContentPane().add(btnResetFields);
+
+		frame.getContentPane().add(btnAvsluta);
+
 	}
 
-		public void addActionListeners() {
-		
+	public void addActionListeners() {
+
 		final ArrayList<String> resultArray = new ArrayList<String>();
-		
+
 		tfGame.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-				
-				String inputValue = tfGame.getText(); 	// plockar upp texten från inmatningen
-				resultArray.add(inputValue);			// lägger till inmatningen till resultArray
-				
+
+				String inputValue = tfGame.getText(); // plockar upp texten från inmatningen
+				resultArray.add(inputValue); // lägger till inmatningen till resultArray
+				lblFinalStringOutput.setText("");
+
 			}
 		});
 
 		tfFirstName.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-				
-				String inputValue = tfFirstName.getText(); 	// plockar upp texten från inmatningen
-				resultArray.add(inputValue);			// lägger till inmatningen till resultArray
-				
+
+				String inputValue = tfFirstName.getText(); // plockar upp texten från inmatningen
+				resultArray.add(inputValue); // lägger till inmatningen till resultArray
+
 			}
 		});
 
 		tfLastName.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-				
-				String inputValue = tfLastName.getText(); 	// plockar upp texten från inmatningen
-				resultArray.add(inputValue);			// lägger till inmatningen till resultArray
-				
+
+				String inputValue = tfLastName.getText(); // plockar upp texten från inmatningen
+				resultArray.add(inputValue); // lägger till inmatningen till resultArray
+
 			}
 		});
-		
+
 		tfGender.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-				
-				String inputValue = tfGender.getText(); 	// plockar upp texten från inmatningen
-				resultArray.add(inputValue);			// lägger till inmatningen till resultArray
-				
+
+				String inputValue = tfGender.getText(); // plockar upp texten från inmatningen
+				resultArray.add(inputValue); // lägger till inmatningen till resultArray
+
 			}
 		});
 
 		tfAge.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-				
-				String inputValue = tfAge.getText(); 	// plockar upp texten från inmatningen
-				resultArray.add(inputValue);			// lägger till inmatningen till resultArray
-				
+
+				String inputValue = tfAge.getText(); // plockar upp texten från inmatningen
+				resultArray.add(inputValue); // lägger till inmatningen till resultArray
+
 			}
 		});
 
 		tfHomeTown.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-				
-				String inputValue = tfHomeTown.getText(); 	// plockar upp texten från inmatningen
-				resultArray.add(inputValue);			// lägger till inmatningen till resultArray
-				
+
+				String inputValue = tfHomeTown.getText(); // plockar upp texten från inmatningen
+				resultArray.add(inputValue); // lägger till inmatningen till resultArray
+
 			}
 		});
-		
+
 		btnKlar.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				
-				lblFinalStringOutput.setText("Här vill jag att texten från buildFinalString skall visas");//g.buildFinalString(firstName, lastName, resultFromInputs, conversor););
+				lblFinalStringOutput.setText("Här ska sluttexten in sen.");
+				// runGame och buildFinalString skall anropas för att kunna få ut sista
+				// texten...
+
+				/*
+				 * String finalString = g.completeCompleteFinalString();
+				 * lblFinalStringOutput.setText(finalString); //g.buildFinalString(firstName,
+				 * lastName, resultFromInputs, conversor););
+				 */
 			}
 		});
+		btnResetFields.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				tfAge.setText("");
+				tfFirstName.setText("");
+				tfGame.setText("");
+				tfGender.setText("");
+				tfHomeTown.setText("");
+				tfLastName.setText("");
+				lblFinalStringOutput.setText("Nu kan du göra igen.");
+				
+			}
+		});
+		btnAvsluta.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				tfAge.setText("");
+				tfFirstName.setText("");
+				tfGame.setText("");
+				tfGender.setText("");
+				tfHomeTown.setText("");
+				tfLastName.setText("");
+				lblFinalStringOutput.setText("Du har valt att avsluta programmet.");
+				
+			}
+		});
+
 	}
-	
+
 	/**
 	 * Create the application.
 	 */
@@ -176,6 +222,7 @@ public class GUI022Danger {
 		addComponents();
 		addActionListeners();
 	}
+
 	/**
 	 * Launch the application.
 	 */
@@ -191,5 +238,4 @@ public class GUI022Danger {
 			}
 		});
 	}
-
 }

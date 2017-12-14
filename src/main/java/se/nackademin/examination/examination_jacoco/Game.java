@@ -55,7 +55,7 @@ public class Game {
 	// full test coverage
 	// getGender... etc kan testas. Lokal variabel jämförs med metodens
 	// return-värde.
-	
+
 	public char getGenderFromInputValues(ArrayList<String> arrayOfInputs) {
 		char genderCharacter = arrayOfInputs.get(3).charAt(0);
 		return genderCharacter;
@@ -63,7 +63,7 @@ public class Game {
 
 	// full test coverage
 	// getAge etc kan testas. Lokal variabel jämförs med metodens return-värde.
-	
+
 	public int getAgeFromInputValues(ArrayList<String> arrayOfInputs) {
 		int ageValue = Integer.parseInt(arrayOfInputs.get(4));
 		return ageValue;
@@ -71,7 +71,7 @@ public class Game {
 
 	// det enda jag kan göra här är att skapa värden så jag kan förutse utskrift,
 	// och kolla så att det stämmer. Det är inte test...
-	
+
 	public void runGame(String gameName, String firstName, String lastName, char gender, int age, String homeCity) {
 		System.out.println("#####################-- " + gameName + " --#####################");
 		int valueName = calculateOutPutBasedOnNames(firstName, lastName);
@@ -89,8 +89,7 @@ public class Game {
 	}
 
 	/*
-	 * testa med alla tre villkor: fN < lN, fN > lN, fN = lN
-	 100% test coverage
+	 * testa med alla tre villkor: fN < lN, fN > lN, fN = lN 100% test coverage
 	 */
 	public int calculateOutPutBasedOnNames(String firstName, String lastName) {
 		if (firstName.length() < lastName.length()) {
@@ -105,7 +104,8 @@ public class Game {
 
 	/*
 	 * testa med tre villkor: M, F, X. Lokalt return-värde ska stämma med metodens.
-	 100% test coverage*/
+	 * 100% test coverage
+	 */
 	public int calculateOutPutBasedOnGender(char gender) {
 		if (gender == 'M') {
 			return 0;
@@ -117,9 +117,8 @@ public class Game {
 	}
 
 	/*
-	 * 100% coverage.
-	 * testa med två villkor för age: <=25 >25. Lokalt return-värde ska stämma med
-	 * metodens.
+	 * 100% coverage. testa med två villkor för age: <=25 >25. Lokalt return-värde
+	 * ska stämma med metodens.
 	 */
 	public int calculateOutPutBasedOnAge(int age) {
 		if (age <= 25) {
@@ -129,8 +128,8 @@ public class Game {
 		}
 	}
 
-	/* testa alla inputs och alla returvärden
-	 * 100% coverage.
+	/*
+	 * testa alla inputs och alla returvärden 100% coverage.
 	 */
 	public int calculateOutPutBasedOnHomeCity(String homeCity) {
 		if (homeCity.substring(0, 1).equalsIgnoreCase("a")) {
@@ -182,13 +181,45 @@ public class Game {
 		int name = resultFromInputs.getResultForNameLenght();
 		int homecity = resultFromInputs.getResultForHomeCity();
 
-		System.out.println(
-				firstName + " " + lastName + ", your are a great " + conversor.getGenderConverterArray().get(gender));
-		System.out.println(conversor.getAgeConverterArray().get(age));
-		System.out.println(conversor.getNameConverterArray().get(name)
+		String myCompleteFinalString = firstName + " " + lastName + ", your are a great "
+				+ conversor.getGenderConverterArray().get(gender) + "\n" + conversor.getAgeConverterArray().get(age)
+				+ conversor.getNameConverterArray().get(name)
 				+ " and combining that with the first letter of your homecity, i.e. "
-				+ conversor.getCityConverterArray().get(homecity));
-		System.out.println("it seems that you are a dedicated student and will be a great Software Tester Engineer!");
+				+ conversor.getCityConverterArray().get(homecity)
+				+ "it seems that you are a dedicated student \n and will be a great Software Tester Engineer!";
 
+		/*
+		 * System.out.println( firstName + " " + lastName + ", your are a great " +
+		 * conversor.getGenderConverterArray().get(gender));
+		 * System.out.println(conversor.getAgeConverterArray().get(age));
+		 * System.out.println(conversor.getNameConverterArray().get(name) +
+		 * " and combining that with the first letter of your homecity, i.e. " +
+		 * conversor.getCityConverterArray().get(homecity)); System.out.
+		 * println("it seems that you are a dedicated student and will be a great Software Tester Engineer!"
+		 * ); return "Retrun from buildFinalString";
+		 */
+	}
+
+	public String completeCompleteFinalString() {
+		Conversor conversor = new Conversor();
+		String firstName = "";
+		String lastName = "";
+		conversor.setNameConverterArrayValues();
+		conversor.setAgeConverterArrayValues();
+		conversor.setGenderConverterArrayValues();
+		conversor.setCityConverterArrayValues();
+
+		int gender = resultFromInputs.getResultForGender();
+		int age = resultFromInputs.getResultForAge();
+		int name = resultFromInputs.getResultForNameLenght();
+		int homecity = resultFromInputs.getResultForHomeCity();
+
+		String completeCompleteFinalString = firstName + " " + lastName + ", your are a great "
+				+ conversor.getGenderConverterArray().get(gender) + "\n" + conversor.getAgeConverterArray().get(age)
+				+ conversor.getNameConverterArray().get(name)
+				+ " and combining that with the first letter of your homecity, i.e. "
+				+ conversor.getCityConverterArray().get(homecity)
+				+ "it seems that you are a dedicated student \n and will be a great Software Tester Engineer!";
+		return completeCompleteFinalString;
 	}
 }
